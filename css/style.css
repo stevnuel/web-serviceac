@@ -316,21 +316,17 @@ body {
 }
 
 .nav-logo span {
-  font-size: 16px;
+  /* Responsive font: min 12px, preferred 3.5vw, max 16px */
+  font-size: clamp(12px, 3.5vw, 16px);
   font-weight: 600;
   white-space: nowrap;
 }
 
-/* Responsive - lebih kecil lagi di mobile */
+/* Responsive logo image for mobile */
 @media (max-width: 768px) {
-  .nav-logo span {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-logo span {
-    font-size: 11px;
+  .nav-logo-img {
+    width: clamp(40px, 20vw, 55px);
+    height: clamp(40px, 20vw, 55px);
   }
 }
 
