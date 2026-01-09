@@ -47,6 +47,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -55,6 +56,7 @@ body {
   color: var(--text-primary);
   overflow-x: hidden;
   line-height: 1.7;
+  max-width: 100vw;
 }
 
 /* ===== Utility Classes ===== */
@@ -62,6 +64,8 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .section-header {
@@ -267,6 +271,9 @@ body {
   padding: 1rem 0;
   background: transparent;
   transition: all 0.3s ease;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .navbar.scrolled {
@@ -487,6 +494,7 @@ body {
 
 .hero-image {
   position: relative;
+  max-width: 100%;
 }
 
 .hero-image-main {
@@ -497,12 +505,14 @@ body {
   box-shadow: var(--shadow-xl);
   overflow: hidden;
   border: 1px solid var(--gray-200);
+  margin: 0 auto;
 }
 
 .hero-image-main img {
   width: 100%;
   height: auto;
   display: block;
+  max-width: 100%;
 }
 
 .hero-image-main .placeholder {
@@ -1505,11 +1515,15 @@ body {
 
   .nav-links,
   .nav-cta {
-    display: none;
+    display: none !important;
   }
 
   .mobile-menu-btn {
-    display: block;
+    display: block !important;
+  }
+
+  .nav-container {
+    padding: 0 1rem;
   }
 
   .hero-title {
@@ -1579,6 +1593,19 @@ body {
 
   .about-features {
     grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .nav-logo-img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .nav-logo span {
+    font-size: clamp(11px, 4vw, 14px);
   }
 }
 
