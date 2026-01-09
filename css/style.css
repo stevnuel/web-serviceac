@@ -309,10 +309,29 @@ body {
 }
 
 .nav-logo-img {
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
   object-fit: contain;
   border-radius: var(--radius-md);
+}
+
+.nav-logo span {
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Responsive - lebih kecil lagi di mobile */
+@media (max-width: 768px) {
+  .nav-logo span {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-logo span {
+    font-size: 11px;
+  }
 }
 
 .nav-links {
@@ -1281,6 +1300,66 @@ body {
 .whatsapp-float:hover .whatsapp-tooltip {
   opacity: 1;
   transform: translateX(0);
+}
+
+/* ===== Scroll to Top Button ===== */
+.scroll-to-top {
+  position: fixed;
+  bottom: 90px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  background: var(--primary);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4);
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.5);
+}
+
+.scroll-to-top:active {
+  transform: translateY(0);
+}
+
+/* Mobile adjustments for floating buttons */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 16px;
+    right: 16px;
+    width: 52px;
+    height: 52px;
+  }
+  
+  .scroll-to-top {
+    bottom: 78px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+  }
+  
+  .whatsapp-tooltip {
+    display: none;
+  }
 }
 
 /* ===== Scroll Reveal Animations ===== */
