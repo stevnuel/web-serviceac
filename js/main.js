@@ -1,4 +1,4 @@
-// Initialize on DOM ready
+//DOMcontentLoaded
 document.addEventListener('DOMContentLoaded', function () {
   lucide.createIcons();
   initScrollAnimations();
@@ -8,14 +8,10 @@ document.addEventListener('DOMContentLoaded', function () {
   initScrollToTop();
 });
 
-/**
- * Scroll to Top Button
- */
 function initScrollToTop() {
   const scrollToTopBtn = document.getElementById('scrollToTop');
   if (!scrollToTopBtn) return;
 
-  // Show/hide button based on scroll position
   window.addEventListener('scroll', () => {
     if (window.pageYOffset > 300) {
       scrollToTopBtn.classList.add('visible');
@@ -24,7 +20,6 @@ function initScrollToTop() {
     }
   });
 
-  // Scroll to top on click
   scrollToTopBtn.addEventListener('click', () => {
     window.scrollTo({
       top: 0,
@@ -33,9 +28,6 @@ function initScrollToTop() {
   });
 }
 
-/**
- * Scroll Reveal Animations
- */
 function initScrollAnimations() {
   const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
 
@@ -58,9 +50,6 @@ function initScrollAnimations() {
   });
 }
 
-/**
- * Navbar Scroll Effect
- */
 function initNavbar() {
   const navbar = document.getElementById('navbar');
   if (!navbar) return;
@@ -73,7 +62,7 @@ function initNavbar() {
     }
   });
 
-  // Smooth scroll for nav links
+  //scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
@@ -96,9 +85,6 @@ function initNavbar() {
   });
 }
 
-/**
- * Mobile Navigation
- */
 function initMobileMenu() {
   const menuBtn = document.getElementById('mobileMenuBtn');
   const mobileNav = document.getElementById('mobileNav');
@@ -136,9 +122,6 @@ function closeMobileMenu() {
   document.body.style.overflow = '';
 }
 
-/**
- * About Section Auto-Sliding Carousel
- */
 let aboutSlideIndex = 0;
 let aboutSliderInterval;
 
@@ -188,9 +171,6 @@ function updateAboutSlider() {
   });
 }
 
-/**
- * Lightbox Functions
- */
 function openLightbox(imageSrc, title, description) {
   const lightbox = document.getElementById('lightbox');
   const img = document.getElementById('lightbox-img');
@@ -199,7 +179,6 @@ function openLightbox(imageSrc, title, description) {
 
   if (!lightbox) return;
 
-  // Handle fallback images
   img.src = imageSrc;
   img.onerror = function () {
     const placeholders = {
@@ -236,7 +215,6 @@ function closeLightbox() {
   }
 }
 
-// Keyboard events
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     closeLightbox();
@@ -244,7 +222,6 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Close lightbox on background click
 document.getElementById('lightbox')?.addEventListener('click', (e) => {
   if (e.target.id === 'lightbox') {
     closeLightbox();
